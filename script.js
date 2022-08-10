@@ -2,29 +2,39 @@
 
 
 
-let num = 30;
-function showFirstMessage(a, b){
-    console.log(a + b)
-    num = 10
-}
-showFirstMessage()
-console.log(num)
-
-
-function calc(a,b){
-    return (a + b) (console.log('Hello World'))
-
-}
-
-console.log(calc(1,2))
-console.log(calc(4,10))
-
-
-
+// let num = 30;
+// function showFirstMessage(a, b){
+//     console.log(a + b)
+//     num = 10
+// }
+// showFirstMessage()
+// console.log(num)
+//
+//
+// function calc(a,b){
+//     return (a + b) (console.log('Hello World'))
+//
+// }
+//
+// console.log(calc(1,2))
+// console.log(calc(4,10))
 
 
 
+// function ret(){
+//     let num = 77
+//     return num;
+//
+// }
+//
+// let anotherNum = ret();
+//
+// console.log(anotherNum)
+//
 
+const logger = (a, b) => a + b
+
+console.log(logger(21, 2))
 
 
 
