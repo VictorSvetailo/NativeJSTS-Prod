@@ -1,6 +1,79 @@
 'use strict'
 
 
+//
+// let usdCurr = 63
+// // let euroCurr = 70
+// let discount = 0.9
+//
+// function convert(amount, curr){
+//     return amount * curr
+// }
+//
+// function promotion(result){
+//     console.log(result * discount)
+// }
+//
+//
+// const res = convert(100, usdCurr)
+// promotion(res)
+// // convert(100 ,euroCurr)
+
+
+// function test() {
+//     for (let i = 0; i < 5; i++) {
+//         console.log(i)
+//         if (i === 3){
+//             return
+//         }
+//     }
+//     console.log('Done')
+// }
+// test();
+
+
+function doNothing(){
+
+}
+
+
+
+
+
+
+
+// let usdCurr = 63
+// let euroCurr = 70
+//
+// function convert(amount, curr){
+//     console.log(amount * curr )
+// }
+//
+// convert(100 ,usdCurr)
+// convert(100 ,euroCurr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // let num = 30;
 // function showFirstMessage(a, b){
@@ -32,9 +105,9 @@
 // console.log(anotherNum)
 //
 
-const logger = (a, b) => a + b
-
-console.log(logger(21, 2))
+// const logger = (a, b) => a + b
+//
+// console.log(logger(21, 2))
 
 
 
