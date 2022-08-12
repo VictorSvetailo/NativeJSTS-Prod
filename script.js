@@ -1,4 +1,113 @@
-'use strict'
+// 'use strict'
+// //
+// let res = 0;
+// let num = 5;
+// let prog = 3;
+// let value = 0
+// let dash = '---'
+// let plus =  " ";
+//
+// for (let i = 1; i <= prog; i++) {
+//     value = num + value
+//     plus += res += value
+//     if (i < prog){
+//         plus += dash
+//     }
+//     value = 0
+// }
+// console.log(plus)
+
+
+// function getMathResult(num, prog) {
+//     let res = 0;
+//     let value = 0
+//     let dash = '---'
+//     let plus = " ";
+//     if (prog !== '' && prog !== 0 && prog > 0) {
+//         for (let i = 1; i <= prog; i++) {
+//             value = num + value
+//             plus += res += value
+//             if (i < prog) {
+//                 plus += dash
+//             }
+//             value = 0
+//         }
+//     } else{
+//         return num
+//     }
+//     return plus
+// }
+//
+// console.log(getMathResult(10, 3))
+
+
+// var n = 0;
+// var x = 0;
+// while (n < 10) {
+//     n++;
+//     x += n;
+// }
+// console.log(x)
+
+
+// let result = ''
+//
+// for (let i = 0; i < 7; i++) {
+//     for (let j = 0; j < i; j++) {
+//         result += "*"
+//     }
+//     result += "\n"
+// }
+//
+// console.log(result)
+//
+
+
+// function sayHello(num, prog) {
+//
+//     for (let i = 1; i < prog; i++) {
+//         return (10 + 10)
+//     }
+//
+// }
+//
+// sayHello(10, 3)
+
+
+//
+// let plus;
+// let minus;
+// let array
+// return minus = num - 1, plus = num + 1, array = [minus, num, plus]
+
+
+// 3) Создайте функцию, которая будет принимать в себя 2 аргумента, оба числа. Первое число - это база, второе число -
+// это сколько раз нужно будет повторить это число в прогрессии. (Смотри пример ниже). Функция должна возвращать строку
+// (или число в особых случаях, о которых ниже), где эти числа идут по порядку, разделенные тремя дефисами "---". После последнего числа их не должно быть.
+//
+//     Если второй аргумент не является числом, равен или меньше нуля - то возвращать просто первый аргумент. (Проверяем через оператор typeof)
+//
+// Примеры:
+//   Вызов функции getMathResult(5, 3) даст ответ 5---10---15
+//
+// Вызов функции getMathResult(3, 10) даст ответ 3---6---9---12---15---18---21---24---27---30
+//
+// Вызов функции getMathResult(10, 5) даст ответ 10---20---30---40---50
+//
+// Вызов функции getMathResult(10, '5') даст ответ 10
+//
+// Вызов функции getMathResult(10, 0) даст ответ 10
+//
+// Вызов функции getMathResult(20, -5) даст ответ 20
+//
+// Эта задача уже ближе к реальности, когда вам нужно учитывать и тип данных у аргументов,
+//     проверять их и продумывать логику работы внутри. Обратите внимание на прогрессию,
+//     она рассчитывается по простой формуле умножения. Если первый аргумент 5, а второй 3, то число повторяется 3 раза, каждый раз увеличиваясь на само себя.
+//     Это базовая математика, которая и нужна для работы в 95% случае на фронтенде.
+
+
+//
+//
 
 
 //
@@ -32,14 +141,9 @@
 // test();
 
 
-function doNothing(){
-
-}
-
-
-
-
-
+// function doNothing(){
+//
+// }
 
 
 // let usdCurr = 63
@@ -51,28 +155,6 @@ function doNothing(){
 //
 // convert(100 ,usdCurr)
 // convert(100 ,euroCurr)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // let num = 30;
@@ -93,7 +175,6 @@ function doNothing(){
 // console.log(calc(4,10))
 
 
-
 // function ret(){
 //     let num = 77
 //     return num;
@@ -108,15 +189,6 @@ function doNothing(){
 // const logger = (a, b) => a + b
 //
 // console.log(logger(21, 2))
-
-
-
-
-
-
-
-
-
 
 
 //
@@ -156,29 +228,6 @@ function doNothing(){
 //
 // console.log(personalMovieDB);
 //
-//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //
