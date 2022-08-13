@@ -1,7 +1,7 @@
 'use strict'
 
 
-const num = 12.2;
+const num = 12.3;
 
 console.log(Math.round(num))
 
