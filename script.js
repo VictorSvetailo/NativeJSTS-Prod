@@ -1,4 +1,14 @@
-// 'use strict'
+'use strict'
+
+let result = prompt('Напишите ваще имя?')
+
+confirm(result)
+
+
+
+
+
+
 // //
 // let res = 0;
 // let num = 5;
