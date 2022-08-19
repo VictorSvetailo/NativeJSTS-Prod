@@ -3,6 +3,100 @@
 
 
 
+// const str = prompt('', '');
+// const products = str.split(', ');
+// products.sort()
+// console.log(products.join('; '))
+//
+
+
+
+
+// arr[99] = 0;
+// console.log(arr.length)
+// console.log(arr)
+
+// const arr = [2, 13, 26, 8, 10]
+// const arr2 = [9, 1, 7, 4, 3]
+// arr.sort(compareNum)
+// console.log(arr)
+//
+// function compareNum(a, b) {
+//     return a - b;
+// }
+
+
+
+
+// arr.forEach(function(item, i,arr ){
+//     console.log(`${i}: ${item} внутри массива ${arr}`)
+// })
+
+
+// // console.log(arr)
+// // arr.pop()
+// //
+// arr.push()
+// console.log(arr)
+//
+// for (let i = 0; i <= arr.length; i++) {
+//     console.log(arr[i])
+// }
+
+// for (let value of arr){
+//     console.log(value)
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
+// let a = 4;
+// let b = 2;
+
+
+// let result = prompt('Выбери браузер!', '').toLowerCase()
+//
+//
+// if(result === 'edge'){
+//     alert( "You've got the Edge!" );
+// }else if(result === 'chrome' || result === 'firefox' || result === 'safari' ||  result === 'opera'){
+//     alert( 'Okay we support these browsers too' );
+// }else{
+//     alert( 'Иди в жопу! Ты ничтожество!' );
+// }
+
+// || 'Firefox' || 'Safari' || 'Opera'
+
+
+// let result = +prompt('Выбери браузер!', '')
+//
+//
+// switch (result){
+//     case 0:
+//         console.log('Вы ввели число 0')
+//         break;
+//     case 1:
+//         console.log('Вы ввели число 1')
+//         break;
+//     case 2:
+//     case 3:
+//         console.log('Вы ввели число 2, а может и 3')
+//         break;
+//     default:
+//         console.log('и все-таки, Ты дебил')
+// }
 
 
 // const object = {
@@ -29,9 +123,6 @@
 // console.log(Object.keys(object).length)
 
 
-
-
-
 // console.log(object)
 // delete object.name
 // console.log(object)
@@ -44,7 +135,6 @@
 //     counter++
 // }
 // console.log(counter)
-
 
 
 // for (let key in object) {
