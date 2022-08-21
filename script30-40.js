@@ -1,18 +1,73 @@
 'use state'
 
 
-let a = 5,
-    b = a;
+function createCounter(){
 
-b = b + 5
+    let counter = 0;
+
+    const myFunction = function(){
+      counter = counter + 1
+        return counter;
+
+    }
+    return myFunction;
+
+}
+
+const increment = createCounter();
+console.log(increment + ' hello')
+const c1 = increment();
+const c2 = increment();
+const c3 = increment();
+const c5 = increment();
+
+console.log(c1, c2, c3, c5)
+
+
+
+
+
+
+
+
+
+// let num = 5; debugger
+//
+// function logNumber() {
+//     //let num = 4; debugger
+//     console.log(num); debugger
+// }
+//
+// num = 6;
+//
+// logNumber(); debugger
+//
+// num = 8;
+//
+// logNumber(); debugger
+
+// num = 7;
+
+
+
+
+
+
+// console.log(num)
+
+
+// let a = 5,
+//     b = a;
+//
+// b = b + 5
 
 // console.log(a)
 // console.log(b)
 
-const obj = {
-    a: 5,
-    b: 1
-}
+// const obj = {
+//     a: 5,
+//     b: 1
+// }
 
 // const copy = obj;
 // copy.a = 10;
@@ -20,59 +75,59 @@ const obj = {
 // console.log(obj)
 // console.log(copy)
 
-function copy(mainObj) {
-    let objCopy = {};
-    let key;
-    for (key in mainObj) {
-        objCopy[key] = mainObj[key];
-    }
-    return objCopy;
-}
+// function copy(mainObj) {
+//     let objCopy = {};
+//     let key;
+//     for (key in mainObj) {
+//         objCopy[key] = mainObj[key];
+//     }
+//     return objCopy;
+// }
+//
+// const numbers = {
+//     a: 2,
+//     b: 5,
+//     c: {
+//         x: 7,
+//         y: 4
+//     }
+// }
+// const newNumbers = copy(numbers)
+// // numbers.b = 10
+// // newNumbers.b = 300
+// // newNumbers.c.x = 300
+// // console.log(numbers)
+// // console.log(newNumbers)
+//
+//
+// const add1 = {
+//     d: {
+//         l: 17
+//     },
+//     e: 20
+// };
+//
+// const add2 = {
+//     w: {
+//         r: 20
+//     },
+//     z: 30
+// };
 
-const numbers = {
-    a: 2,
-    b: 5,
-    c: {
-        x: 7,
-        y: 4
-    }
-}
-const newNumbers = copy(numbers)
-// numbers.b = 10
-// newNumbers.b = 300
-// newNumbers.c.x = 300
-// console.log(numbers)
-// console.log(newNumbers)
-
-
-const add1 = {
-    d: {
-        l: 17
-    },
-    e: 20
-};
-
-const add2 = {
-    w: {
-        r: 20
-    },
-    z: 30
-};
-
-const together = Object.assign({}, add1,)
-
-together.d.l = 20000
-together.e = {}
+// const together = Object.assign({}, add1,)
+//
+// together.d.l = 20000
+// together.e = {}
 //
 // console.log(add1)
 // console.log(together)
 
-const oldArray = ['a', 'b', 'c']
+// const oldArray = ['a', 'b', 'c']
 
 
 // const newArray = oldArray.slice()
 // const newArray = [...oldArray]
-oldArray[0] = 'v'
+// oldArray[0] = 'v'
 
 // console.log(oldArray)
 // console.log(newArray)
@@ -81,53 +136,42 @@ oldArray[0] = 'v'
 // console.log(newArray)
 
 
-const video = ['youtube', 'vimeo', 'rutube'],
-    blogs = ['wordpress', 'livejournal', 'blogger'],
-    internet = [...blogs, ...video, 'vk', 'facebook']
-
-// console.log(internet)
-
-function log(a, b, c){
-    console.log(a)
-    console.log(b)
-    console.log(c)
-}
-
-const num = [2, 4, 5]
-
-log(...num)
-
-const array = ['a', 'b']
-
-const newArray = [...array]
-
-newArray[1] = 'ж'
-
-// console.log(array)
-// console.log(newArray)
-
-
-const obj1 = {
-    one: 1,
-    two: 2
-}
-
-const newobj1 = {...obj1}
-
-console.log(obj1)
-console.log(newobj1)
-
-
-
-
-
-
-
-
-
-
-
-
+// const video = ['youtube', 'vimeo', 'rutube'],
+//     blogs = ['wordpress', 'livejournal', 'blogger'],
+//     internet = [...blogs, ...video, 'vk', 'facebook']
+//
+// // console.log(internet)
+//
+// function log(a, b, c){
+//     console.log(a)
+//     console.log(b)
+//     console.log(c)
+// }
+//
+// const num = [2, 4, 5]
+//
+// log(...num)
+//
+// const array = ['a', 'b']
+//
+// const newArray = [...array]
+//
+// newArray[1] = 'ж'
+//
+// // console.log(array)
+// // console.log(newArray)
+//
+//
+// const obj1 = {
+//     one: 1,
+//     two: 2
+// }
+//
+// const newobj1 = {...obj1}
+//
+// console.log(obj1)
+// console.log(newobj1)
+//
 
 
 // function showMessage(from, text = "текст не добавлен") {
