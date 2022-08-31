@@ -1,6 +1,10 @@
 'use strict'
 
 
+
+
+
+
 // const pow = (x, n) => {
 //     let result = 1
 //
@@ -9,21 +13,21 @@
 //     }
 //     return result
 // }
-debugger
-const pow = (x, n) => {
-    if (n === 1) {
-        return x;
-    } else {
-        debugger
-        return x * pow(x, n - 1)
-        debugger
-    }
-}
-
-
-// pow(2, 3)
-
-console.log(pow(2, 2))
+// debugger
+// const pow = (x, n) => {
+//     if (n === 1) {
+//         return x;
+//     } else {
+//         debugger
+//         return x * pow(x, n - 1)
+//         debugger
+//     }
+// }
+//
+//
+// // pow(2, 3)
+//
+// console.log(pow(2, 2))
 
 
 //
