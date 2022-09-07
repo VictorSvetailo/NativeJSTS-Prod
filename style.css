@@ -1,0 +1,127 @@
+button {
+    width: 150px;
+    height: 50px;
+    background-color: green;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(0.95);
+}
+
+.overlay {
+    background-color: pink;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+
+a {
+    display: block;
+    margin-top: 30px;
+}
+
+/*---------keyframe*/
+
+.img {
+    background: url('z.png') 0 0/100px 100px no-repeat;
+    width: 100px;
+    height: 100px;
+}
+
+/*.img{*/
+/*  background-image: url('1.jpeg');*/
+/*  width: 100px;*/
+/*  height: 100px;*/
+/*  display: block;*/
+/*}*/
+.blocksFrame {
+    position: relative;
+    width: 100%;
+
+}
+
+.two {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    animation-name: two2;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes two2 {
+
+    0% {
+        left: 150%;
+        transform: rotate(-160deg) translateY(10px);
+    }
+    50% {
+        border-radius: 0%;
+        background-color: blue;
+        /*border: 10px solid green;*/
+    }
+    60% {
+        border-radius: 0%;
+        background-color: yellow;
+        /*border: 10px solid orange;*/
+        transform: rotate(-10deg) translateY(50px);
+    }
+    100% {
+        left: 0%;
+        transform: rotate(-0deg) translateY(100px);
+    }
+}
+
+
+/*.two:hover{*/
+
+/*  transition: all 4s ease 0.1s;*/
+/*  transform: rotate(360deg) translateX(181px);*/
+/*}*/
+
+
+.animation__circle {
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #5e5373;
+    position: absolute;
+    animation-name: circle;
+    animation-duration: 2.5s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+}
+
+/* селектор  Или (универсальная запись):*/
+.animation__circle {
+    /* все те же стили селектора */
+    /*animation: circle 1s linear infinite normal running 0s forwards;*/
+}
+
+/* ключевые кадры */
+@keyframes circle {
+
+    0% {
+        left: 0%;
+        transform: rotate(0deg) translateX(181px);
+        /*transform: translate(130%) translateX(181px);;*/
+    }
+    50% {
+        border-radius: 0%;
+    }
+    100% {
+        left: 50%;
+        transform: rotate(360deg) translateX(0px);
+    }
+}
