@@ -1,5 +1,37 @@
 'use state'
 
+
+const array = [-2, 5, -3, 8, -100]
+
+function positiveSum(arr) {
+    let array = arr.filter(a => a > 0)
+    if (array.length !== 0){
+        return array.reduce((x, y) => x + y)
+    }
+    if (array.length === 0){
+        return 0
+    }
+
+}
+
+console.log(positiveSum(array))
+
+
+// function twiceAsOld(dadYearsOld, sonYearsOld) {
+//     let sum1 = dadYearsOld - sonYearsOld
+//     let sum2 = sum1 + sum1
+//     let sum3 = sum2 - dadYearsOld
+//     return sum3
+//     //return (sum3 < 0) ? sum3 * -1 : sum3
+// }
+
+
+//
+//
+// const twiceAsOld = (d, s) => Math.abs(d - 2 * s);
+//
+// console.log(twiceAsOld(53, 27))
+
 // let man1 = {
 //     name: 'John',
 //     age: 28,
@@ -29,80 +61,77 @@
 // man1Copy.mother.age = 20
 //
 
-const a = [{name: 'Victor', age: 26},{name: 'Kate', age: 22, work: {title: 'Designer'}},3,4,5,6]
-
-
-const copyOriginal = JSON.stringify(a)
-const copyMain = JSON.parse(copyOriginal)
-
-
-copyMain[1].work.title = "Mother"
-
-console.log(a)
-console.log(copyMain)
-
-
+// const a = [{name: 'Victor', age: 26},{name: 'Kate', age: 22, work: {title: 'Designer'}},3,4,5,6]
+//
+//
+// const copyOriginal = JSON.stringify(a)
+// const copyMain = JSON.parse(copyOriginal)
+//
+//
+// copyMain[1].work.title = "Mother"
+//
+// console.log(a)
+// console.log(copyMain)
+//
 
 
 // console.log(a)
-
-
-let arrayCopy =  a.map(el => {
-    return {
-        ...el,
-        work: {...el.work}
-    }
-})
-
-
-arrayCopy[1].work.title = 'Programmer'
+//
+//
+// let arrayCopy =  a.map(el => {
+//     return {
+//         ...el,
+//         work: {...el.work}
+//     }
+// })
+//
+//
+// arrayCopy[1].work.title = 'Programmer'
 
 
 // console.log(a)
 // console.log(arrayCopy)
 
 
-
-    // console.log(cCopy)
-
-let state = {
-    name: 'John',
-    age: 28,
-    mother: {
-        name: 'Kate',
-        age: 22,
-        work: {
-            title: 'Designer'
-        }
-    },
-    father: {
-        name: 'Victor',
-        age: 27
-    }
-};
-
-
-const b = {
-    ...state,
-    mother: {
-        ...state.mother,
-        work: {
-            ...state.mother.work
-        }
-    }
-
-}
-
-b.name = 'Eva'
-b.mother.age = 20
-
+// console.log(cCopy)
+//
+// let state = {
+//     name: 'John',
+//     age: 28,
+//     mother: {
+//         name: 'Kate',
+//         age: 22,
+//         work: {
+//             title: 'Designer'
+//         }
+//     },
+//     father: {
+//         name: 'Victor',
+//         age: 27
+//     }
+// };
+//
+//
+// const b = {
+//     ...state,
+//     mother: {
+//         ...state.mother,
+//         work: {
+//             ...state.mother.work
+//         }
+//     }
+//
+// }
+//
+// b.name = 'Eva'
+// b.mother.age = 20
+//
 
 // console.log(state)
 // console.log(b)
 //
 // console.log(b.name === state.name)
 // console.log(b.mother === state.mother)
-
 
 
 // const man1Copy = {
@@ -132,7 +161,6 @@ b.mother.age = 20
 // console.log(man1Copy)
 
 
-
 // const string = 'String bw empty and you dio not need tooo account for different data types.'
 
 
@@ -159,11 +187,7 @@ b.mother.age = 20
 // }
 
 
-
-
-console.log(findShort(string))
-
-
+// console.log(findShort(string))
 
 
 // const basicOp = (operation, value1, value2) => ({ '+': value1 + value2, '-': value1 - value2, '*': value1 * value2, '/': value1 / value2,}) [operation]
@@ -182,12 +206,6 @@ console.log(findShort(string))
 //         return value1 / value2
 //     }
 // }
-
-
-
-
-
-
 
 
 // function smash (words) {
