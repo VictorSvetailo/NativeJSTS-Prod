@@ -1,19 +1,37 @@
 'use strict'
 
 
-function getSum(number) {
-    //...здесь пишем код.
-    let figures = "" + number
-    let sum = 0
-    for (let i = 0; i < figures.length; i++)
-        sum += +figures[i]
 
-        return sum
-
-}
+const promise1 = axios.get('https://google.com')
+promise1.then((data) => {
+    console.log(data)
+})
 
 
-console.log(getSum(242424))
+// const obj = {
+//     name: '',
+//     say(message) {
+//         alert(message + ', ' + `${this.name}` )
+//     }
+// }
+//
+// obj.name = 'Victor'
+// obj.say('Hello')
+
+
+// function getSum(number) {
+//     //...здесь пишем код.
+//     let figures = "" + number
+//     let sum = 0
+//     for (let i = 0; i < figures.length; i++)
+//         sum += +figures[i]
+//
+//         return sum
+//
+// }
+//
+//
+// console.log(getSum(242424))
 
 
 // 2. Функция getTriangleType принимает три параметра:
