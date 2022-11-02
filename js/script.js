@@ -1,11 +1,135 @@
-'use strict'
+// 'use strict'
 
 
+function getNumber() {
+    const promise = new Promise((resolve, reject) => {
 
-const promise1 = axios.get('https://google.com')
-promise1.then((data) => {
-    console.log(data)
-})
+        // reject('some error')
+        setTimeout(() => {
+            resolve(Math.random())
+        }, 2000)
+
+    })
+    return promise
+}
+
+// getNumber().then(n => console.log(n))
+
+// getNumber().then(n => console.log(n))
+
+
+setTimeout(() => {
+    console.log('Hello')
+}, 3000)
+
+
+const repo = {
+    save(data) {
+        try {
+            localStorage.setItem('some-key', JSON.stringify(data))
+        } catch (error) {
+            return false
+        }
+        return true
+    }, saveAsync(data) {
+        const promise = new Promise((resolve, rejected) => {
+            try {
+                localStorage.setItem('some-key', JSON.stringify(data))
+                resolve()
+            } catch (error) {
+                rejected(error)
+            }
+        })
+        return promise
+    }, read() {
+        const data = localStorage.getItem('some-key')
+        if (!data) {
+            return (null)
+        } else {
+            return (JSON.parse(data))
+        }
+    }, readAsync() {
+        return new Promise((res, rej) => {
+            const data = localStorage.getItem('some-key')
+            if (!data) {
+                res(null)
+            } else {
+                res(JSON.parse(data))
+            }
+        })
+    }
+}
+
+
+// const result = repo.save({name: 'Victor Svetailo  '})
+// if (result) {
+//     console.log('SAVE')
+// } else {
+//     console.error('NOT SAVE')
+// }
+
+// repo.saveAsync({name: 'Victor Svetailo'})
+//     .then(() => {console.log('SAVE')})
+//     .catch(error => console.warn('NOT SAVE' + error))
+
+
+// const run = async () => {
+//     await repo.saveAsync({name: 'Victor Svetailo'})
+//     console.log('SAVE')
+//     const data = await repo.readAsync()
+//     console.log(data)
+// }
+//
+// run()
+
+
+// let count = 0
+//
+// setInterval(()=>{
+//     count += 1
+//     console.log(count)
+// }, 1000)
+
+
+function wait(ms) {
+    return new Promise((res) => {
+        setTimeout(() => {
+            res()
+        }, ms)
+    })
+}
+
+async function run() {
+        await wait(100)
+        console.log(1)
+        await wait(100)
+        console.log(2)
+        await wait(100)
+        console.log(3)
+}
+
+run()
+
+// const resolvedPromise = Promise.resolve([{}])
+// //console.log(resolvedPromise)
+//
+// resolvedPromise
+//     .then(data => console.log(data))
+//     .catch(error => console.warn(error))
+//console.log('test')
+
+// const rejectPromise = Promise.reject(100)
+// //console.log(rejectPromise)
+//
+// rejectPromise
+//     .then(data => console.log(data))
+//     .catch(error => console.warn(error))
+
+
+// const promise1 = axios.get('https://google.com')
+// promise1.then((data) => {
+//     console.log(data)
+// })
 
 
 // const obj = {
