@@ -30,13 +30,13 @@ a {
 /*---------keyframe*/
 
 .img {
-    background: url('z.png') 0 0/100px 100px no-repeat;
+    background: url('../../../assets/images/star.png') 0 0/100px 100px no-repeat;
     width: 100px;
     height: 100px;
 }
 
 /*.img{*/
-/*  background-image: url('1.jpeg');*/
+/*  background-images: url('1.jpeg');*/
 /*  width: 100px;*/
 /*  height: 100px;*/
 /*  display: block;*/

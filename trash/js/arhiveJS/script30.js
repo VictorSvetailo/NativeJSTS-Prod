@@ -53,7 +53,7 @@
 //     console.log('I go this lesson')
 // }
 //
-// learnJS('JavaScript', done)
+// learnJS('java-script', done)
 //
 //
 
