@@ -16,26 +16,26 @@
 // sum(2, 7) // 128
 
 
-let students = {
-    js: [
-        {name: 'John', progress: 100},
-        {name: 'Ivan', progress: 60}
-    ],
-    html: {
-        basic: [
-            {name: 'Peter', progress: 20,},
-            {name: 'Ann', progress: 18,}
-        ],
-        pro: [
-            {name: 'Sam', progress: 10,}
-        ],
-        semi:
-            {
-                stud:
-                    [{name: 'Sam', progress: 10}]
-            },
-    }
-}
+// let students = {
+//     js: [
+//         {name: 'John', progress: 100},
+//         {name: 'Ivan', progress: 60}
+//     ],
+//     html: {
+//         basic: [
+//             {name: 'Peter', progress: 20,},
+//             {name: 'Ann', progress: 18,}
+//         ],
+//         pro: [
+//             {name: 'Sam', progress: 10,}
+//         ],
+//         semi:
+//             {
+//                 stud:
+//                     [{name: 'Sam', progress: 10}]
+//             },
+//     }
+// }
 
 
 // function getTotalProgressByIteration(data){
