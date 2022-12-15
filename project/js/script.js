@@ -26,7 +26,7 @@ const brBox = '30%'
 box.style.cssText = `background-color: hotpink; border-radius: ${brBox}`
 
 for (let i = 0; i < hearts.length; i++){
-    console.log(i)
+    // console.log(i)
     hearts[i].style.borderRadius = '20px'
 }
 
