@@ -1,6 +1,6 @@
 const btnEvent = document.querySelectorAll('.btn_event')
 // const btnEvent = document.querySelector('.btn_event')
-console.log(btnEvent)
+// console.log(btnEvent)
 
 
 // получить данные о элементе, установить и удалить обработчик
