@@ -1,47 +1,51 @@
 'use strict'
 
-const box = document.getElementById('box'),
-    btn = document.getElementsByTagName("button"),
-    circles = document.getElementsByClassName('circle'),
-    hearts = document.querySelectorAll('.heart'),
-    oneHeart = document.querySelector('div'),
-    wrapper = document.querySelector('.wrapper');
-
-box.textContent = 'Hello'
-// box.innerHTML = 'Hello'
-// box.innerText = 'Hello'
-// box.outerText = 'Hello'
-box.style.color = 'white'
-box.style.padding = '10px'
-box.style.textAlign = 'center'
-box.background = 'blue'
-box.style.width = '50px'
-box.style.height = '50px'
-box.style.borderRadius = '20%'
-
-// console.dir(btn[1])
-btn[1].style.borderRadius = '50%'
-
-const brBox = '30%'
-box.style.cssText = `background-color: hotpink; border-radius: ${brBox}`
-
-for (let i = 0; i < hearts.length; i++){
-    // console.log(i)
-    hearts[i].style.borderRadius = '20px'
-}
-
-hearts.forEach((item) => {
-    item.style.background = 'green'
-})
+// const p = document.querySelectorAll('p')
+// console.log(p)
 
 
-const div = document.createElement('div')
-const text = document.createTextNode('I\'m Victor')
-
-div.classList.add('black');
-// document.body.append(div);
-// wrapper.append(div);
-wrapper.prepend(div);
+// const box = document.getElementById('box'),
+//     btn = document.getElementsByTagName("button"),
+//     circles = document.getElementsByClassName('circle'),
+//     hearts = document.querySelectorAll('.heart'),
+//     oneHeart = document.querySelector('div'),
+//     wrapper = document.querySelector('.wrapper');
+//
+// box.textContent = 'Hello'
+// // box.innerHTML = 'Hello'
+// // box.innerText = 'Hello'
+// // box.outerText = 'Hello'
+// box.style.color = 'white'
+// box.style.padding = '10px'
+// box.style.textAlign = 'center'
+// box.background = 'blue'
+// box.style.width = '50px'
+// box.style.height = '50px'
+// box.style.borderRadius = '20%'
+//
+// // console.dir(btn[1])
+// btn[1].style.borderRadius = '50%'
+//
+// const brBox = '30%'
+// box.style.cssText = `background-color: hotpink; border-radius: ${brBox}`
+//
+// for (let i = 0; i < hearts.length; i++){
+//     // console.log(i)
+//     hearts[i].style.borderRadius = '20px'
+// }
+//
+// hearts.forEach((item) => {
+//     item.style.background = 'green'
+// })
+//
+//
+// const div = document.createElement('div')
+// const text = document.createTextNode('I\'m Victor')
+//
+// div.classList.add('black');
+// // document.body.append(div);
+// // wrapper.append(div);
+// wrapper.prepend(div);
 
 // hearts[0].before(div)
 // hearts[0].after(div)
@@ -58,13 +62,7 @@ wrapper.prepend(div);
 // div.innerHTML = '<h4>Hello World!<h4/>'
 // div.textContent = 'Victor!'
 
-div.insertAdjacentHTML('beforeend', '<h1>Test #227</h1>');
-
-
-
-
-
-
+// div.insertAdjacentHTML('beforeend', '<h1>Test #227</h1>');
 
 
 // const box = document.getElementById('box');
