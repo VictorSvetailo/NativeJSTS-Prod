@@ -53,33 +53,33 @@
 // console.log(user)
 
 // iterator
-const salaries = {
-    john: 500,
-    ivan: 1000,
-    ann: 5000,
-    sayHello: function (){
-        console.log('Hello')
-    }
-}
+// const salaries = {
+//     john: 500,
+//     ivan: 1000,
+//     ann: 5000,
+//     sayHello: function (){
+//         console.log('Hello')
+//     }
+// }
 
-salaries[Symbol.iterator]= function (){
-    return {
-        current: this.john,
-        last: this.ann,
-
-        next(){
-            if (this.current < this.last){
-                this.current = this.current + 500
-                return {done: false, value: this.current}
-            } else {
-                return {done: true}
-            }
-        }
-    }
-}
-
-const iterator = salaries[Symbol.iterator]()
-console.log(iterator.next())
+// salaries[Symbol.iterator]= function (){
+//     return {
+//         current: this.john,
+//         last: this.ann,
+//
+//         next(){
+//             if (this.current < this.last){
+//                 this.current = this.current + 500
+//                 return {done: false, value: this.current}
+//             } else {
+//                 return {done: true}
+//             }
+//         }
+//     }
+// }
+//
+// const iterator = salaries[Symbol.iterator]()
+// console.log(iterator.next())
 
 // for (const salary of salaries) {
 //     console.log(salary)
