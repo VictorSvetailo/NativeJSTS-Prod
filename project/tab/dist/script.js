@@ -95,8 +95,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const btnModal = document.getElementsByName('data-close')
 
 
-    const modalTrigger = document.querySelectorAll('[data-modal]'), modal = document.querySelector('.modal'),
-        modalClosesBtn = document.querySelector('[data-close]')
+    const modalTrigger = document.querySelectorAll('[data-modal]'), modal = document.querySelector('.modal')
+
     const openModal = () => {
         modal.classList.add('show')
         modal.classList.remove('hide')
@@ -114,10 +114,9 @@ window.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = ''
     }
 
-    modalClosesBtn.addEventListener('click', closeModal)
 
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
+        if (e.target === modal || e.target.getAttribute('data-close') === '') {
             closeModal()
         }
     })
@@ -128,7 +127,7 @@ window.addEventListener('DOMContentLoaded', () => {
             closeModal()
         }
     })
-    const modalTimerId = setTimeout(openModal, 3000)
+    const modalTimerId = setTimeout(openModal, 30000)
 
     const showModalByScroll = () => {
         if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 1) {
@@ -182,42 +181,16 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    new MenuCard(
-        "img/tabs/vegy.jpg",
-        "vegy",
-        'Меню "Фитнес"',
-        'Меню "Фитнес" - это новый подход к приготовлению блюд: ' +
-        'больше свежих овощей и фруктов. Продукт активных и здоровых людей. ' +
-        'Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
-        9,
-        '.menu .container',
-    ).render();
-    new MenuCard(
-        "img/tabs/elite.jpg",
-        "elite",
-        'Меню “Премиум”',
-        'В меню “Премиум” мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!',
-        550,
-        '.menu .container',
-    ).render();
-    new MenuCard(
-        "img/tabs/post.jpg",
-        "post",
-        'Меню "Постное"',
-        'Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков. ',
-        430,
-        '.menu .container',
-        'menu__item'
-    ).render();
+    new MenuCard("img/tabs/vegy.jpg", "vegy", 'Меню "Фитнес"', 'Меню "Фитнес" - это новый подход к приготовлению блюд: ' + 'больше свежих овощей и фруктов. Продукт активных и здоровых людей. ' + 'Это абсолютно новый продукт с оптимальной ценой и высоким качеством!', 9, '.menu .container',).render();
+    new MenuCard("img/tabs/elite.jpg", "elite", 'Меню “Премиум”', 'В меню “Премиум” мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!', 550, '.menu .container',).render();
+    new MenuCard("img/tabs/post.jpg", "post", 'Меню "Постное"', 'Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков. ', 430, '.menu .container', 'menu__item').render();
 
     // Forms
 
     const forms = document.querySelectorAll('form')
 
     const message = {
-        loading: 'Загрузка',
-        success: 'Спасибо скоро мы с вами свяжемся!',
-        failure: 'Что то пошло не так('
+        loading: 'img/spinner.svg', success: 'Спасибо скоро мы с вами свяжемся!', failure: 'Что то пошло не так('
     }
 
     forms.forEach(item => {
@@ -228,17 +201,21 @@ window.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', (e) => {
             e.preventDefault()
 
-            const statusMessage = document.createElement('div');
-            statusMessage.classList.add('status')
-            statusMessage.textContent = message.loading
-            form.append(statusMessage)
+            const statusMessage = document.createElement('img');
+            statusMessage.src = message.loading
+            statusMessage.style.cssText = `
+            display: block;
+            margin: 0 auto
+            `;
+            // form.append(statusMessage)
+            form.insertAdjacentElement('afterend', statusMessage)
 
             const request = new XMLHttpRequest()
             request.open('POST', 'server.php');
 
             request.setRequestHeader('Content-type', 'application/Json')
             const formData = new FormData(form)
-            
+
             const object = {}
             formData.forEach(function (value, key) {
                 object[key] = value
@@ -249,21 +226,40 @@ window.addEventListener('DOMContentLoaded', () => {
             request.send(json)
 
             request.addEventListener('load', () => {
-                if(request.status === 200){
+                if (request.status === 200) {
                     console.log(request.response)
-                    statusMessage.textContent = message.success
+                    showThanksModal(message.success)
                     form.reset()
-                    setTimeout(()=>{
-                        statusMessage.remove()
-                    },2000)
-                }else{
-                    statusMessage.textContent = message.failure
-                    console.log('Some error')
+                    statusMessage.remove()
+                } else {
+                    showThanksModal(message.failure)
                 }
             })
         })
     }
 
+    function showThanksModal(message) {
+        const prevModalDialog = document.querySelector('.modal__dialog')
+
+        prevModalDialog.classList.add('hide');
+        openModal();
+
+        const thanksModal = document.createElement('div')
+        thanksModal.classList.add('modal__dialog')
+        thanksModal.innerHTML = `
+        <div class="modal__content">
+        <div data-close="" class="modal__close">×</div>
+        <div class="modal__title">${message}</div>
+        <div/>
+        `;
+        document.querySelector('.modal').append(thanksModal)
+        setTimeout(() => {
+            thanksModal.remove()
+            prevModalDialog.classList.add('show');
+            prevModalDialog.classList.remove('hide');
+            closeModal()
+        }, 3000)
+    }
 
 })
 
