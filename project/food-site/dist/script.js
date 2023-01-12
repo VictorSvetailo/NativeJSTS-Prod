@@ -197,6 +197,7 @@ window.addEventListener('DOMContentLoaded', () => {
         postData(item)
     })
 
+
     function postData(form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault()
@@ -207,13 +208,9 @@ window.addEventListener('DOMContentLoaded', () => {
             display: block;
             margin: 0 auto
             `;
-            // form.append(statusMessage)
             form.insertAdjacentElement('afterend', statusMessage)
 
-            const request = new XMLHttpRequest()
-            request.open('POST', 'server.php');
 
-            request.setRequestHeader('Content-type', 'application/Json')
             const formData = new FormData(form)
 
             const object = {}
@@ -221,22 +218,67 @@ window.addEventListener('DOMContentLoaded', () => {
                 object[key] = value
             })
 
-            const json = JSON.stringify(object)
-
-            request.send(json)
-
-            request.addEventListener('load', () => {
-                if (request.status === 200) {
-                    console.log(request.response)
+            fetch('server1.php', {
+                method: 'POST', headers: {
+                    'Content-type': 'application/json'
+                }, body: JSON.stringify(object)
+            })
+                .then(res => res.text())
+                .then(res => {
+                    console.log(res)
                     showThanksModal(message.success)
                     form.reset()
                     statusMessage.remove()
-                } else {
+                })
+                .catch(error => {
                     showThanksModal(message.failure)
-                }
+                }).finally(res => {
+                form.reset()
             })
         })
     }
+
+
+    // function postData(form) {
+    //     form.addEventListener('submit', (e) => {
+    //         e.preventDefault()
+    //
+    //         const statusMessage = document.createElement('img');
+    //         statusMessage.src = message.loading
+    //         statusMessage.style.cssText = `
+    //         display: block;
+    //         margin: 0 auto
+    //         `;
+    //         // form.append(statusMessage)
+    //         form.insertAdjacentElement('afterend', statusMessage)
+    //
+    //         const request = new XMLHttpRequest()
+    //         request.open('POST', 'server.php');
+    //
+    //         request.setRequestHeader('Content-type', 'application/Json')
+    //         const formData = new FormData(form)
+    //
+    //         const object = {}
+    //         formData.forEach(function (value, key) {
+    //             object[key] = value
+    //         })
+    //
+    //         const json = JSON.stringify(object)
+    //
+    //         request.send(json)
+    //
+    //         request.addEventListener('load', () => {
+    //             if (request.status === 200) {
+    //                 console.log(request.response)
+    //                 showThanksModal(message.success)
+    //                 form.reset()
+    //                 statusMessage.remove()
+    //             } else {
+    //                 showThanksModal(message.failure)
+    //             }
+    //         })
+    //     })
+    // }
 
     function showThanksModal(message) {
         const prevModalDialog = document.querySelector('.modal__dialog')
@@ -261,6 +303,15 @@ window.addEventListener('DOMContentLoaded', () => {
         }, 3000)
     }
 
+    // fetch('https://jsonplaceholder.typicode.com/posts', {
+    //     method: 'POST',
+    //     body: JSON.stringify({name: 'Alex'}),
+    //     headers: {
+    //         'Content-type': 'application/json'
+    //     }
+    // })
+    //     .then(response => response.json())
+    //     .then(json => console.log(json));
 })
 
 
